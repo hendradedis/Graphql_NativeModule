@@ -81,7 +81,7 @@ public class ServiceGraphqlNativeModule extends ReactContextBaseJavaModule{
                         Log.d("ServiceModule", "data: " + data);
 
                         String dataToJson = new Gson().toJson(response.getData().launches());
-//
+                        
                         launchesCallback.invoke(dataToJson);
                     }
 
