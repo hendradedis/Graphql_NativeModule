@@ -1,0 +1,35 @@
+query GetLaunchesList($pageSize:Int $after:String $missionPatch:PatchSize) {
+    launches(pageSize:$pageSize after:$after) {
+        cursor
+        hasMore
+        launches{
+            id
+            site
+            rocket {
+                id
+                name
+                type
+            }
+            mission {
+                name
+                missionPatch(size:$missionPatch)
+            }
+        }
+    }
+}
+
+query GetLaunchDetail($id:ID!){
+    launch(id: $id){
+        id
+        site
+        rocket {
+            id
+            name
+            type
+        }
+        mission {
+            name
+            missionPatch(size:SMALL)
+        }
+    }
+}
