@@ -102,6 +102,7 @@ loadMore = () => {
         <FlatList
           data= {data}
           horizontal={true}
+          extraData={data}
           showsHorizontalScrollIndicator={false}
           renderItem={(item) => {
             // console.log("itemku", item)
@@ -113,7 +114,7 @@ loadMore = () => {
               />
             )
           }}
-          keyExtractor={(item, index) => String(item)} 
+          keyExtractor={(item, index) => index.toString()}
           ListFooterComponent={() => {
             if(this.state.update === true) {
               return(

@@ -113,7 +113,7 @@ class HomeScreen extends Component {
           <FlatList
             data= {this.state.dataGraphql}
             // data= {dataDum}
-            extraData={dataDum}
+            extraData={this.state.dataGraphql}
             renderItem={(item) => {
               return(
                 <Card
@@ -125,7 +125,7 @@ class HomeScreen extends Component {
             style={{
               paddingBottom: moderateScale(20)
             }}
-            keyExtractor={(item, index) => String(item)}
+            keyExtractor={(item, index) => index.toString()}
             ListFooterComponent={() => {
               if(this.state.update === true) {
                 return(
